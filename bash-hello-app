@@ -1,0 +1,6 @@
+# Use a lightweight base image that includes a shell
+FROM alpine:latest
+
+# Set the command to run when the container starts.
+# We use `sh -c` to execute a shell command string directly.
+CMD ["/bin/sh", "-c", "echo 'Hello, World from an inline script!'"]
