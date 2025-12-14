@@ -1,6 +1,18 @@
 name: Create and publish a Docker image
 
-on: push
+on:  
+  workflow_dispatch:  
+    inputs:  
+      image_repo:  
+        description: 'Repository URL'  
+        required: true  
+      dockerfile:  
+        description: 'Path to Dockerfile'  
+        required: true  
+      port_context:  
+        required: true  
+        description: "Action and general context (blueprint, run id)"  
+        type: string 
 
 env:
   REGISTRY: ghcr.io
