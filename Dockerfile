@@ -1,5 +1,6 @@
-FROM quay.io/centos/arm64v8
+FROM quay.io/centos/amd64
 WORKDIR /home
+USER root
 RUN cd /etc/yum.repos.d/
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
 RUN sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
